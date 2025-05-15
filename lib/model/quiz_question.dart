@@ -4,7 +4,7 @@ class QuizQuestion {
 
   const QuizQuestion({required this.text, required this.answers});
 
-  List<String> get shuffledAnswers {
+  List<String> getshuffledAnswers() {
     final shuffledResult = List.of(answers);
     shuffledResult.shuffle(); 
     // final 변수인 shuffledResult에 shuffle 을 사용해서 리스트 요소의 
