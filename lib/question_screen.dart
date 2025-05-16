@@ -38,14 +38,16 @@ class _QuestionScreenState extends State<QuestionScreen> {
             Text(
               currentQuestion.text,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             const SizedBox(height: 30),
             ...currentQuestion.getshuffledAnswers().map(
-              (answer) =>
-                  AnswerButton(answerText: answer, onTap: () {
-                    answerQuestion(answer);
-                  }),
+              (answer) => AnswerButton(
+                answerText: answer,
+                onTap: () {
+                  answerQuestion(answer);
+                },
+              ),
             ),
           ],
         ),

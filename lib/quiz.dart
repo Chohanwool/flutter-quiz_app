@@ -18,15 +18,18 @@ class _QuizState extends State<Quiz> {
   @override
   void initState() {
     super.initState();
-    activeScreen = StartScreen(onSwitchScreen: switchScreen,);
+    activeScreen = StartScreen(onSwitchScreen: switchScreen);
   }
 
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
-    
-    if(selectedAnswers.length == questions.length) {
+
+    if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = ResultScreen(chosenAnswers: selectedAnswers,);
+        activeScreen = ResultScreen(
+          chosenAnswers: selectedAnswers,
+          onResultScreen: switchScreen,
+        );
         selectedAnswers = [];
       });
     }
